@@ -1,0 +1,394 @@
+/* =====================================
+   1. General Reset / Base Styles
+===================================== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+
+
+
+/* =====================================
+   2. Header
+===================================== */
+header {
+    background-color: rgba(51, 51, 51, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hidden state */
+header.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Show it again */
+  header {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Logo on the left */
+  .logo i {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* Nav in the center */
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #4dabf7;
+  }
+  
+  /* Toggle theme button on the right */
+  .toggle-theme button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 0.3rem 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .toggle-theme button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+
+  /* =====================================
+   3. Navigation
+  ===================================== */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+/* =====================================
+   4. About Section
+===================================== */
+  #about {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  #about h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* subtle ambient glow */
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+  }
+  .profile-pic:hover {
+    box-shadow: 0 0 25px rgba(0, 140, 255, 0.7), 0 0 40px rgba(0, 140, 255, 0.5);
+  }
+
+  .about-text {
+    max-width: 500px;
+    text-align: left;
+  }
+  
+/* =====================================
+   5. Skills Section
+===================================== */
+  #skills {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(200, 200, 200, 0.3);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+  }
+  
+  .skill-item:hover {
+    box-shadow: 0 0 25px rgba(100, 100, 255, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .skill-item i {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-item p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+/* =====================================
+   6. Projects
+===================================== */
+
+#projects {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.2); /* transparent white */
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(100, 100, 255, 0.074);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card h3 {
+    margin: 0.5rem 0;
+  }
+  
+  .project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card a {
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+  }
+  
+  
+/* =====================================
+   7. Footer
+===================================== */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+  }
+  
+  .social-icons {
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #00acee;
+  }
+
+
+/* =====================================
+   8. Darkmode-theme
+===================================== */
+
+
+    body.dark-mode {
+        background-color: #121212;
+        color: #f4f4f4;
+      }
+      
+      body.dark-mode header {
+        background-color: rgba(33, 33, 33, 0.9);
+        color: #f4f4f4;
+      }
+      body.dark-mode nav a:hover {
+        color: #4dabf7; /* or any highlight color you like */
+      }
+
+      body.dark-mode nav a,
+      body.dark-mode .logo a,
+      body.dark-mode footer {
+        color: #ccc;
+        
+      }
+      
+      body.dark-mode .project-card {
+        background-color: #1e1e1e;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+      body.dark-mode .toggle-theme button {
+        color: #f4f4f4;
+      }
+      body.dark-mode main {
+        background-color: #1e1e1e;
+      }
+      
+      body.dark-mode #about,
+      body.dark-mode #skills,
+      body.dark-mode #projects {
+        background-color: #1e1e1e;
+      }
+      
+      body.dark-mode .project-card {
+        background: rgba(40, 40, 40, 0.6);
+        box-shadow: 0 0 15px rgba(100, 100, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f4f4f4;
+      }
+      
+      body.dark-mode .skill-item i {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        color: #f4f4f4;
+      }
+      
+      body.dark-mode .project-card a {
+        color: #4dabf7;
+      }
+
+      body.dark-mode #back-to-top {
+        color: #f4f4f4;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+    /* =====================================
+    8. Back to top
+    ===================================== */
+    #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      
+        color: #111;
+        font-size: 1.4rem;
+        font-weight: bold;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+        z-index: 999;
+      
+        display: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      #back-to-top:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+      }
+      
+      
